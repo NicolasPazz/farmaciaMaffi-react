@@ -11,14 +11,14 @@ const NavBar = () => {
                     <Link to='/' style={{textDecoration: "none", color: "white"}}><Logo>Farmacia Maffi</Logo></Link>
                 </Left>
                 <Center>
-                    <Link to='/category/9' style={{textDecoration: "none", color: "white"}}><MenuItem>Cosmética</MenuItem></Link>
-                    <Link to='/category/1' style={{textDecoration: "none", color: "white"}}><MenuItem>Farmacia</MenuItem></Link>
-                    <Link to='/category/5' style={{textDecoration: "none", color: "white"}}><MenuItem>Hogar y Alimentos</MenuItem></Link>                    
+                    <Link to='/category/1' style={{textDecoration: "none", color: "white"}}><MenuItem>Cosmética</MenuItem></Link>
+                    <Link to='/category/2' style={{textDecoration: "none", color: "white"}}><MenuItem>Farmacia</MenuItem></Link>
+                    <Link to='/category/3' style={{textDecoration: "none", color: "white"}}><MenuItem>Hogar y Alimentos</MenuItem></Link>                    
                 </Center>
                 <Right>
                     <MenuItem>Registrarse</MenuItem>
                     <MenuItem>Ingresar</MenuItem>
-                    <MenuItem><CartWidget /></MenuItem>
+                    <CartWidget />
                 </Right>
             </Wrapper>
         </AppBar>

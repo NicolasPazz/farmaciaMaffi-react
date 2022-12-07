@@ -2,11 +2,11 @@ import { DescriptionOutlined, InfoOutlined, LocalOfferOutlined } from '@mui/icon
 import { Link } from 'react-router-dom';
 import { ProductContainer, Circle, Image, Info, Icon } from './styledComponents';
 
-const Item = ({ id, title, stock, price, pictureUrl }) => {
+const Item = ({ id, name, stock, price, image }) => {
     return (
         <ProductContainer>
             <Circle />
-            <Image src={pictureUrl} />
+            <Image src={image} />
             <Info>
                 <Icon>
                     <LocalOfferOutlined /><strong>$ {price}</strong>
