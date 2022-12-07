@@ -1,13 +1,12 @@
-import Nav from 'react-bootstrap/Nav';
-import { IoCartOutline } from 'react-icons/io5';
+import Badge from '@mui/material/Badge';
+import { ShoppingCartOutlined } from "@mui/icons-material/ShoppingCartOutlined";
 
 const CartWidget = () => {
     return (
-        <div className="cartIcon">
-            <span className="cartQuantity">5</span>
-            <Nav.Link href="#carrito"><IoCartOutline /></Nav.Link>
-        </div>
-    )
+        <Badge badgeContent={4} color="secondary">
+            <ShoppingCartOutlined />
+        </Badge>
+    );
 }
 
 export default CartWidget;
