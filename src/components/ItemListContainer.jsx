@@ -6,8 +6,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { products } from '../utils/products';
 
-//const { products } = require('../utils/products');
-
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
     const { idCategory } = useParams();

@@ -1,4 +1,4 @@
-const products = [{
+export const products = [{
         id: 1,
         name: "Bruma Facial",
         price: 1200,
@@ -127,7 +127,3 @@ const products = [{
         }
     }
 ];
-
-module.exports = {
-    products,
-}
