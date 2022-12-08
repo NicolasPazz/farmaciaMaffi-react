@@ -6,13 +6,13 @@ import { products } from '../utils/products';
 
 const ItemDetailContainer = () => {
     const [dato, setDato] = useState({});
-    const { idItem } = useParams();
+    const { idProduct } = useParams();
 
     useEffect(() => {
-        customFetch(2000, products.find(item => item.id === parseInt(idItem)))
+        customFetch(2000, products.find(item => item.id === parseInt(idProduct)))
             .then(result => setDato(result))
             .catch(err => console.log(err))
-    }, []);
+    }, [idProduct]);
     
     return (
         <ItemDetail item={dato} />

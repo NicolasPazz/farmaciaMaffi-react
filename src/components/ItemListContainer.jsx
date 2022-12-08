@@ -8,19 +8,19 @@ import { products } from '../utils/products';
 
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
-    const { idCategory } = useParams();
+    const { nameCategory } = useParams();
 
-    console.log(idCategory);
-
-    //componentDidUpdate
     useEffect(() => {
-        customFetch(2000, products.filter(item => {
-            if (idCategory === undefined) return item;
-            return item.category.id === parseInt(idCategory)
-        }))
-            .then(result => setDatos(result))
+        customFetch(2000, products)
+        .then(result =>{
+            if(nameCategory){
+                setDatos(result.filter((item)=> item.category.name == nameCategory))
+            }else{
+                setDatos(result)
+            }
+        } )
             .catch(err => console.log(err))
-    }, [datos]);
+    }, [nameCategory]);
 
     const onAdd = (qty) => {
         alert("You have selected " + qty + " items.");
@@ -29,7 +29,6 @@ const ItemListContainer = () => {
     return (
         <>  
             <ItemList items={datos} />
-            <ItemCount stock={5} initial={1} onAdd={onAdd} />
         </>
     );
 }
