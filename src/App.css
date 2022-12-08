@@ -33,3 +33,8 @@ body {
 .itemListContainer{
   text-align: center;
 }
+
+.logoimg{
+  width: 3em;
+  height: 1.5em;
+}

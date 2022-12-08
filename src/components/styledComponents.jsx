@@ -6,6 +6,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgba(0, 122, 121)
 `;
 
 const Left = styled.div`
@@ -84,7 +85,7 @@ const ProductContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f5fbfd;
+    background-color: #FFFFFF;
     position: relative;
     &:hover ${Info}{
         opacity: 1;

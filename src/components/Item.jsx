@@ -5,7 +5,6 @@ import { ProductContainer, Circle, Image, Info, Icon } from './styledComponents'
 const Item = ({ id, name, stock, price, image }) => {
     return (
         <ProductContainer>
-            <Circle />
             <Image src={image} />
             <Info>
                 <Icon>
@@ -14,8 +13,8 @@ const Item = ({ id, name, stock, price, image }) => {
                 <Icon>
                     <DescriptionOutlined />{stock} unid.
                 </Icon>
-                <Icon style={{cursor: "pointer"}}>
-                    <Link to={`/item/${id}`}><InfoOutlined />Details</Link>
+                <Icon style={{ cursor: "pointer" }}>
+                    <Link to={`/item/${id}`}><InfoOutlined />Descripción</Link>
                 </Icon>
             </Info>
         </ProductContainer>
