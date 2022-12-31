@@ -1,22 +1,28 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import customFetch from "../utils/customFetch";
 import ItemDetail from "./ItemDetail";
-import { products } from '../utils/products';
+import { fetchOneFromFirebase } from "../utils/fetchFromFirebase";
 
 const ItemDetailContainer = () => {
-    const [dato, setDato] = useState({});
-    const { idProduct } = useParams();
+  const [dato, setDato] = useState({});
+  const { idComic } = useParams();
+  
+  useEffect(()=>{
+    document.title ='Farmacia Maffi | Descripción'
 
-    useEffect(() => {
-        customFetch(2000, products.find(item => item.id === parseInt(idProduct)))
-            .then(result => setDato(result))
-            .catch(err => console.log(err))
-    }, [idProduct]);
-    
-    return (
-        <ItemDetail item={dato} />
-    );
-}
+  },[])
+
+  useEffect(() => {
+    fetchOneFromFirebase(idItem)
+      .then((result) => setDato(result))
+      .catch((e) => console.log(e));
+  }, []);
+
+  return (
+    <>
+      <ItemDetail items={dato} />
+    </>
+  );
+};
 
 export default ItemDetailContainer;

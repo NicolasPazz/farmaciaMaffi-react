@@ -1,36 +1,43 @@
-import ItemCount from './ItemCount';
-import ItemList from './ItemList';
-import { Wrapper } from './styledComponents';
-import customFetch from "../utils/customFetch";
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
-import { products } from '../utils/products';
+import { useEffect, useState } from "react";
+import { ItemList } from "./ItemList";
+import { useParams } from "react-router-dom";
+import { fetchFromFirebase } from "../utils/fetchFromFirebase";
+import SearchComponent from "./Searcher";
 
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
-    const { nameCategory } = useParams();
+    const [search, setSearch] = useState("");
+    const { categoryId } = useParams();
+
+    const searcher = (e) => {
+        setSearch(e.target.value);
+    };
+    useEffect(() => {
+        fetchFromFirebase(categoryId)
+            .then((result) => setDatos(result))
+            .catch((e) => console.log(e));
+    }, [categoryId]);
 
     useEffect(() => {
-        customFetch(2000, products)
-        .then(result =>{
-            if(nameCategory){
-                setDatos(result.filter((item)=> item.category.name == nameCategory))
-            }else{
-                setDatos(result)
-            }
-        } )
-            .catch(err => console.log(err))
-    }, [nameCategory]);
+        return () => {
+            setDatos([]);
+        };
+    }, []);
 
-    const onAdd = (qty) => {
-        alert("You have selected " + qty + " items.");
-    }
+    const results =
+        search == ""
+            ? datos
+            : datos.filter((dato) =>
+                  dato.name.toLowerCase().includes(search.toLocaleLowerCase())
+              );
 
     return (
-        <>  
-            <ItemList items={datos} />
+        <>
+            {SearchComponent(search, searcher)}
+
+            <ItemList items={results} />
         </>
     );
-}
+};
 
 export default ItemListContainer;

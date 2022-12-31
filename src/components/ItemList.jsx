@@ -1,16 +1,15 @@
-import Item from "./Item";
-import { ProductsContainer } from './styledComponents';
+import { Product } from "./Item";
+import Loader from "./Loader";
+import { ContMainCards } from "../styles/components/ItemListContainer.Elements";
 
-const ItemList = ({ items }) => {
+export const ItemList = ({ items }) => {
     return (
-        <ProductsContainer>
-        {
-            items.length > 0
-            ? items.map(item => <Item key={item.id} id={item.id} name={item.name} price={item.price} image={item.image} stock={item.stock} />)
-            : <p>Cargando...</p>
-        }
-        </ProductsContainer>
+        <ContMainCards>
+            {items.length > 0 ? (
+                items.map((item) => <Product key={item.id} {...item} />)
+            ) : (
+                <Loader />
+            )}
+        </ContMainCards>
     );
-}
-
-export default ItemList;
+};

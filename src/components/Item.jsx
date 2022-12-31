@@ -1,24 +1,40 @@
-import { DescriptionOutlined, InfoOutlined, LocalOfferOutlined } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
-import { ProductContainer, Circle, Image, Info, Icon } from './styledComponents';
+import {
+    ContCard,
+    CardImg,
+    ButtonCard,
+    CardTitle,
+    CardBody,
+    CardText,
+    ContNovedad,
+    ImgNovedad,
+    StyledLink,
+} from "../styles/components/ItemListContainer.Elements";
 
-const Item = ({ id, name, stock, price, image }) => {
+export const Product = (props) => {
     return (
-        <ProductContainer>
-            <Image src={image} />
-            <Info>
-                <Icon>
-                    <LocalOfferOutlined /><strong>$ {price}</strong>
-                </Icon>
-                <Icon>
-                    <DescriptionOutlined />{stock} unid.
-                </Icon>
-                <Icon style={{ cursor: "pointer" }}>
-                    <Link to={`/item/${id}`}><InfoOutlined />Descripción</Link>
-                </Icon>
-            </Info>
-        </ProductContainer>
-    );
-}
+        <>
+            <ContCard>
+                <div style={{ position: "relative" }}>
+                    <CardImg src={props.image} />
+                </div>
+                <CardBody>
+                    <CardTitle>{props.name}</CardTitle>
+                    <CardText>${props.price}</CardText>
+                    <ButtonCard>
+                        <StyledLink to={`/item/${props.id}`}>
+                            Ver Producto
+                        </StyledLink>
+                    </ButtonCard>
+                </CardBody>
 
-export default Item;
+                {props.novedad ? (
+                    <ContNovedad>
+                        <ImgNovedad src={props.novedad} alt="pngNovedad" />
+                    </ContNovedad>
+                ) : (
+                    <ContNovedad />
+                )}
+            </ContCard>
+        </>
+    );
+};
