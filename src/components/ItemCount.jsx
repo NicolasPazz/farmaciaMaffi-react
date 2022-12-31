@@ -1,39 +1,46 @@
-import Button from '@mui/material/Button';
-import { Add, Remove } from '@mui/icons-material';
-import { useEffect, useState } from 'react';
-import { ProductAmountContainer, ProductAmount } from './styledComponents';
+import { useState, useEffect } from "react";
 
-const ItemCount = ({ stock = 0, initial = 1,  onAdd }) => {
-    const [count, setCount] = useState(0);
+import {
+    BtnAdd,
+    BtnSub,
+    ContBtnDetail,
+    Count,
+} from "../styles/components/ItemCount.Elements";
+import { ButtonDetail } from "../styles/components/ItemDetailContainer.Elements";
+
+const ItemCount = ({ initial, onAdd, stock }) => {
+    const [count, setCount] = useState(initial);
+
+    const decrease = () => {
+        setCount(count - 1);
+    };
+
+    const increase = () => {
+        setCount(count + 1);
+    };
 
     useEffect(() => {
         setCount(initial);
-    },[]);
+    }, [initial]);
 
-    const increment = () => {
-        if (count < stock) {
-            setCount(count + 1);
-        }
-    }
-    
-    const decrement = () => {
-        if (count > initial) {
-            setCount(count - 1);
-        }
-    }
     return (
-        <ProductAmountContainer>
-            <Button variant="text" onClick={increment}><Add /></Button>
-            <ProductAmount>{count}</ProductAmount>
-            <Button variant="text" onClick={decrement}><Remove /></Button>
-            {
-                stock
-                ? <Button variant="contained" color="primary" onClick={() => onAdd(count)}>Add to Cart</Button>
-                : <Button variant="contained" disabled>Add to Cart</Button>
-            }
-            
-        </ProductAmountContainer>
+        <ContBtnDetail>
+            <BtnSub disabled={count == 0} onClick={decrease}>
+                -
+            </BtnSub>
+            <Count>{count}</Count>
+            <BtnAdd disabled={count >= stock} onClick={increase}>
+                +
+            </BtnAdd>
+
+            <ButtonDetail
+                disabled={stock <= 0 || count == 0}
+                onClick={() => onAdd(count)}
+            >
+                Añadir al carrito
+            </ButtonDetail>
+        </ContBtnDetail>
     );
-}
+};
 
 export default ItemCount;
