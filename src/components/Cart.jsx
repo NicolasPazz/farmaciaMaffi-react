@@ -27,7 +27,6 @@ import {
     SubtotalItem,
     ContIcon,
     IconTrash2,
-    ContPng,
     Envio,
 } from "../styles/components/Cart.Elements";
 import CartEmpty from "./CartEmptyContainer";
@@ -98,12 +97,12 @@ const Cart = () => {
         };
 
         createOrderFireBase(order)
-            .then((res) => {
+            .then((result) => {
                 updateStock();
-                AlertOrder(res);
+                AlertOrder(result);
                 ClearCart();
             })
-            .catch((e) => console.log(e));
+            .catch((err) => console.log(err));
     };
 
     return (

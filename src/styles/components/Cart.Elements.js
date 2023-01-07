@@ -247,8 +247,6 @@ export const PriceOld = styled.p`
     padding: 0;
 `;
 
-// Components para el carrito vacio //
-
 export const ContCarritoVacio = styled.div`
     height: 100vh;
     width: 100%;
