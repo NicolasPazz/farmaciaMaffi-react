@@ -4,25 +4,24 @@ import ItemDetail from "./ItemDetail";
 import { fetchOneFromFirebase } from "../utils/fetchFromFirebase";
 
 const ItemDetailContainer = () => {
-  const [dato, setDato] = useState({});
-  const { idComic } = useParams();
-  
-  useEffect(()=>{
-    document.title ='Farmacia Maffi | Descripción'
+    const [dato, setDato] = useState({});
+    const { idItem } = useParams();
 
-  },[])
+    useEffect(() => {
+        document.title = "Farmacia Maffi | Descripción";
+    }, []);
 
-  useEffect(() => {
-    fetchOneFromFirebase(idItem)
-      .then((result) => setDato(result))
-      .catch((e) => console.log(e));
-  }, []);
+    useEffect(() => {
+        fetchOneFromFirebase(idItem)
+            .then((result) => setDato(result))
+            .catch((err) => console.log(err));
+    }, []);
 
-  return (
-    <>
-      <ItemDetail items={dato} />
-    </>
-  );
+    return (
+        <>
+            <ItemDetail items={dato} />
+        </>
+    );
 };
 
 export default ItemDetailContainer;

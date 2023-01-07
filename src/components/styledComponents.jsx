@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
-//NavBar
 const Wrapper = styled.div`
     padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(0, 122, 121)
+    background-color: rgba(0, 122, 121);
 `;
 
 const Left = styled.div`
@@ -39,8 +38,6 @@ const MenuItem = styled.div`
     margin-left: 25px;
 `;
 
-
-//ItemCount
 const ProductAmountContainer = styled.div`
     display: flex;
     align-items: center;
@@ -52,8 +49,6 @@ const ProductAmount = styled.div`
     margin: 5px;
 `;
 
-
-//ItemList
 const ProductsContainer = styled.div`
     padding: 20px;
     display: flex;
@@ -61,7 +56,6 @@ const ProductsContainer = styled.div`
     justify-content: space-between;
 `;
 
-//Item
 const Info = styled.div`
     opacity: 0;
     width: 100%;
@@ -85,9 +79,9 @@ const ProductContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     position: relative;
-    &:hover ${Info}{
+    &:hover ${Info} {
         opacity: 1;
     }
 `;
@@ -121,10 +115,7 @@ const Icon = styled.div`
     }
 `;
 
-
-//ItemDetail
-const DetailContainer = styled.div`
-`;
+const DetailContainer = styled.div``;
 
 const WrapperDetail = styled.div`
     padding: 50px;
@@ -154,15 +145,32 @@ const Desc = styled.p`
     margin: 20px 0px;
 `;
 
-const Price  = styled.span`
+const Price = styled.span`
     font-weight: 100;
     font-size: 40px;
 `;
 
-export { 
-    Wrapper, Logo, MenuItem, Left, Center, Right, 
-    ProductAmountContainer, ProductAmount, 
-    ProductsContainer, ProductContainer,
-    Circle, Image, Info, Icon,
-    DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Desc, Price
-}
+export {
+    Wrapper,
+    Logo,
+    MenuItem,
+    Left,
+    Center,
+    Right,
+    ProductAmountContainer,
+    ProductAmount,
+    ProductsContainer,
+    ProductContainer,
+    Circle,
+    Image,
+    Info,
+    Icon,
+    DetailContainer,
+    WrapperDetail,
+    ImgContainer,
+    ImageDetail,
+    InfoContainer,
+    Title,
+    Desc,
+    Price,
+};

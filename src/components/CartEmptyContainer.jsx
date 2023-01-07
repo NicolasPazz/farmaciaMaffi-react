@@ -9,7 +9,7 @@ const CartEmpty = () => {
         <ContCarritoVacio>
             <PmsjErr>El carrito esta vacio.</PmsjErr>
 
-            <StyledLink to="/">Ir a comprar</StyledLink>
+            <StyledLink to="/">Volver a la Tienda</StyledLink>
         </ContCarritoVacio>
     );
 };
