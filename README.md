@@ -1,7 +1,7 @@
 
 # Farmacia Maffi E-Commerce
 
-Este proyecto es una tienda online de una farmacia.
+Esto es un proyecto en progreso de una tienda online de una farmacia.
 ## Tecnologias:
 
 - React Js
