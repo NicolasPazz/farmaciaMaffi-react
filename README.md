@@ -1,33 +1,28 @@
 # Farmacia Maffi – E-commerce
 
-Tienda online de una farmacia hecha en React, con catálogo y órdenes guardados en Firebase Firestore. Proyecto final del curso de React de Coderhouse (2022).
+Online store for a pharmacy built with React, with the product catalog and orders stored in Firebase Firestore. Final project of the Coderhouse React course (2022).
 
-## Funcionalidades
+## Features
 
-- Catálogo de productos traído de Firestore, con filtro por categoría (`/categoria/:categoryId`).
-- Vista de detalle de cada producto con selector de cantidad según el stock.
-- Carrito global con React Context: agregar, quitar y vaciar productos, y total de la compra.
-- Checkout que genera una orden en Firestore y descuenta el stock de cada producto.
-- Notificaciones con toasts y alertas.
+- Product catalog loaded from Firestore, with category filter (`/categoria/:categoryId`).
+- Product detail page with a quantity selector limited by stock.
+- Global cart with React Context: add, remove, clear and total.
+- Checkout that creates an order in Firestore and decreases the stock of each product.
+- Toast notifications and alerts.
 
-## Tecnologías
+## Tech stack
 
 - React 18 + Vite
 - React Router
 - Firebase Firestore
-- React-Bootstrap, MUI y Styled-Components
-- React Icons, React Hot Toast, SweetAlert
+- React-Bootstrap, MUI and Styled-Components
 
-## Correr localmente
+## Run locally
 
-1. Copiar `.env.example` a `.env.local` y completar la configuración de un proyecto de Firebase con las colecciones `products` y `orders`.
-2. Ejecutar:
+1. Copy `.env.example` to `.env.local` and fill in the configuration of a Firebase project with `products` and `orders` collections.
+2. Run:
 
 ```bash
 npm install
 npm run dev
 ```
-
-## Autor
-
-- [Nicolas Paz](https://github.com/NicolasPazz)
