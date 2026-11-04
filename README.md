@@ -20,6 +20,9 @@ Tienda online de una farmacia hecha en React, con catálogo y órdenes guardados
 
 ## Correr localmente
 
+1. Copiar `.env.example` a `.env.local` y completar la configuración de un proyecto de Firebase con las colecciones `products` y `orders`.
+2. Ejecutar:
+
 ```bash
 npm install
 npm run dev

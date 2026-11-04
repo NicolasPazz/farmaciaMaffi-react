@@ -82,8 +82,8 @@ const Cart = () => {
     const CreateOrder = () => {
         let order = {
             buyer: {
-                name: "Leo Messi",
-                email: "campeonDelMundo@coderhouse.com",
+                name: "Cliente Demo",
+                email: "cliente@ejemplo.com",
                 phone: "1234567",
             },
             item: CartList.map((item) => ({
